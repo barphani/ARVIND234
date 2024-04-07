@@ -1,0 +1,27 @@
+options {
+        directory  "/var/named" ;
+        recursion  no ;
+};
+
+zone    "arvind.colud" IN {
+        type master;
+        file "arvind";
+};
+
+
+
+$TTL 3H
+@       IN SOA  @ rname.invalid. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+
+arvind.cloud.           IN      NS      ns1.arvind.cloud.
+arvind.cloud.           IN      NS      ns2.arvind.cloud.
+ns1                     IN      A       43.204.96.44
+ns2                     IN      A       43.204.96.44
+arvind.cloud.           IN      A       10.10.10.10
+photos                  IN      A       80.70.60.50
+
